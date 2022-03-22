@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  display: flex;
+  /* Torna o elemento um flex container, transformando todos 
+  os elementos internos(filhos) em flex itens */
+
+  align-items: center;
+  /* alinha os flex itens de acordo com o eixo do container */
+
+  justify-content: center;
+  /* Alinha os itens flex no container de acordo com a direção  */
+
+  min-height: 100vh;
+
+  background-color: #ccc;
+}
+
+fieldset {
+  border: 0;
+}
+
+.paralelogran {
+  background-color: #00acd7;
+  width: 625px;
+  height: 720px;
+  max-width: 70%;
+  border-radius: 12px;
+  box-shadow: 10px 5px 15px;
+  transform: skew(6deg, 3deg);
+  position: absolute;
+  z-index: -1;
+}
+
+section.formulario {
+  /* cor de fundo  do elemento */
+  background-color: #fff;
+
+  padding: 30px 5px;
+  /* Gerar espaço ao redor do conteudo do elemento 
+      30px superior e inferior
+      5px para a esquerda e direita
+  */
+
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px;
+  max-width: 70vw;
+}
+
+section h1 {
+  padding: 40px 10px;
+  text-align: center;
+}
+
+fieldset:nth-child(2) {
+  /* faz referencia ao input nome */
+  display: flex;
+}
+
+fieldset:nth-child(4) {
+  /* faz referencia ao senha */
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+fieldset:nth-child(5) {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.container input {
+  margin: 10px;
+  width: calc(100% - 20px);
+  border: none;
+  border-radius: 10px;
+  height: 70px;
+  background-color: #ededed;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  outline: 0;
+  padding: 14px 10px 0 10px;
+}
+
+.container {
+  /* relative - indica que o posicionado em relação a sua posição normal, prendendo a label dentro da div  */
+  position: relative;
+}
+
+.container label {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: #9d9d9d;
+  position: absolute;
+  /* O position absolute, posiciona qualquer elemento de acordo como elemento pai, deixando de fazer parte do fluxo comum do documento, ou seja, ele fica solto  */
+  line-height: 70px;
+  top: 10px;
+  left: 20px;
+  user-select: none;
+  /* impedir seleçao do texto */
+  pointer-events: none;
+  /* se o elemento deve agir ou nao aos eventos do ponteiro */
+  transition: 0.8s;
+  /* para o focus e a valid funcionar suavimente, adicionamos o transitions */
+}
+
+/* quando ocorrer um foco no input, altere as propriedades da label  */
+
+.container input:focus ~ label,
+.container input:valid ~ label {
+  left: 20px;
+  top: -10px;
+  color: #00acd7;
+}
+
+#check input {
+  width: 25px;
+  height: 25px;
+  margin: auto 0;
+}
+
+#check label {
+  margin: auto 10px;
+  color: #555;
+  transition: 0.5s;
+}
+
+/* quando a checkbox for selecionada, o texto do label passara a ser azul  */
+
+#check input:checked ~ label,
+#check input:valid ~ label {
+  color: #00acd7;
+}
+#check {
+  width: 100%;
+  text-transform: uppercase;
+  display: flex;
+}
+
+form a {
+  display: block;
+  text-decoration: none;
+  font-size: 16px;
+  color: #555;
+  font-weight: 500;
+  padding-top: 20px;
+  text-align: center;
+}
+
+form a:hover {
+  color: black;
+}
+
+button {
+  margin: 40px 0;
+  margin-left: 10px;
+  width: calc(50% - 10px);
+  height: 70px;
+  background-color: #00acd7;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+button:hover {
+  opacity: 0.85;
+}
